@@ -1,0 +1,32 @@
+.column {
+    border: 1px;
+    position: absolute;
+    top: 50%;
+    margin-right: 4px;
+    left: 50%;
+    margin-left: 5px;
+    margin-right: -50%;
+    margin-top: 3px;
+    transform: translate(-50%, -50%);
+    border-style: solid;
+    border: 5px;
+    padding: 10px;
+    border-style: double;
+    border-radius: 10px;
+    background-color: rgb(179, 24, 89);
+}
+
+input {
+    height: 30px;
+    width: 185px;
+    margin-left: 5px;
+    background-color: rgb(226, 194, 208);
+}
+
+div button {
+    margin: 5px;
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+    background-color: rgb(235, 135, 175);
+}
