@@ -1,12 +1,11 @@
 <div class="column">
-  <input type="text" value="{{val}}"
-  (keypress)="onClick($event)" >
+    <input type="text" [value]=result (keypress)="onClick($event)">
 
-  <div >
-    <button id="zero">0</button>
-    <button id="one">1</button>
-    <button id ="plus">+</button>
-    <button id="minus">-</button>
-  </div>
+    <div>
+        <button (click)="zero">0</button>
+        <button (click)="one">1</button>
+        <button (click)="plus">+</button>
+        <button (click)="minus">-</button>
+    </div>
 
 </div>

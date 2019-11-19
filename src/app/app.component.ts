@@ -7,4 +7,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'amiwCalculator';
+
+  public result = '';
+
+
+  onClick(k: KeyboardEvent) {
+    console.log(k);
+    if(k.key !== '0' && k.key !== '1'){
+      k.preventDefault();
+    }
+  }
+
+
+
+
+
+  
 }
