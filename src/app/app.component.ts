@@ -18,9 +18,14 @@ export class AppComponent {
     }
   }
 
+  addZero(){
+    this.result = this.result + '0';
+  }
 
+  addOne(){
+    this.result = this.result + '1';
+  }
 
-
-
+	  
   
 }
