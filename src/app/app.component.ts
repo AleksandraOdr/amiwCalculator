@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,7 +9,8 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'amiwCalculator';
 
-  public result = '';
+  public text: string = '';
+  public val :number;
 
 
   onClick(k: KeyboardEvent) {
@@ -18,13 +20,19 @@ export class AppComponent {
     }
   }
 
-  addZero(){
-    this.result = this.result + '0';
+  onKeyUp(){
+    console.log(this.text);
   }
+   
+  onDigitClick(ev : MouseEvent){
+    this.text += (ev.target as HTMLElement).textContent;
+   }
 
-  addOne(){
-    this.result = this.result + '1';
-  }
+
+   textToVal(){
+    this.val = parseInt(this.text,2);
+   }
+
 
 	  
   
