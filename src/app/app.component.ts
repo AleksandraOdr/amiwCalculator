@@ -10,12 +10,12 @@ export class AppComponent {
   title = 'Calculator';
 
   public text = '';
-  public val = 0;
+  public value = 0;
 
 
   onClick(k: KeyboardEvent) {
     console.log(k);
-    if (k.key !== '0' && k.key !== '1') {
+    if (k.key !== '0' && k.key !== '1' && k.key !== '+' && k.key !== '-') {
       k.preventDefault();
     }
   }
@@ -25,11 +25,16 @@ export class AppComponent {
   }
 
   onDigitClick(ev: MouseEvent) {
-    this.text += (ev.target as HTMLElement).textContent;
+    const digit = (ev.target as HTMLElement).textContent;
+    if (digit === '1' || digit === '0') {
+      this.text += digit;
+    } else {
+      this.value = this.textToVal();
+      this.text += digit;
+      console.log(this.value);
+    }
   }
-
-
   textToVal() {
-    this.val = parseInt(this.text, 2);
+    return parseInt(this.text, 2);
   }
 }

@@ -19,7 +19,6 @@ input {
   width: 185px;
   margin-left: 5px;
   background-color: rgb(226, 194, 208);
-  direction: rtl;
 }
 
 div button {
