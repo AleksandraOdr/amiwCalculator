@@ -19,6 +19,7 @@ input {
   width: 185px;
   margin-left: 5px;
   background-color: rgb(226, 194, 208);
+  text-align: right;
 }
 
 div button {
@@ -27,4 +28,14 @@ div button {
   width: 40px;
   border-radius: 10px;
   background-color: rgb(235, 135, 175);
+}
+
+.result {
+  width: 90px !important;
+  background-color: rgb(235, 149, 158) !important;
+}
+
+.clean {
+  width: 90px !important;
+  background-color: rgb(235, 149, 158) !important;
 }

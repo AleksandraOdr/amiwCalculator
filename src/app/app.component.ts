@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -11,6 +10,7 @@ export class AppComponent {
 
   public text = '';
   public value = 0;
+  public sign = '';
 
 
   onClick(k: KeyboardEvent) {
@@ -29,12 +29,43 @@ export class AppComponent {
     if (digit === '1' || digit === '0') {
       this.text += digit;
     } else {
-      this.value = this.textToVal();
-      this.text += digit;
-      console.log(this.value);
+      if (this.value === 0) {
+        this.value = this.textToVal();
+        this.sign = digit;
+        this.clean();
+      } else {
+        if (digit === '+') {
+          this.value = this.value + this.textToVal();
+          this.clean();
+        } else {
+          this.value = this.value - this.textToVal();
+          this.clean();
+        }
+      }
     }
   }
+
   textToVal() {
     return parseInt(this.text, 2);
+  }
+
+  onResult() {
+
+    if (this.sign === '+') {
+      this.value = this.value + this.textToVal();
+    } else {
+      this.value = this.value - this.textToVal();
+    }
+    this.text = this.value.toString(2);
+    this.value = 0;
+  }
+
+  clean() {
+    this.text = '';
+  }
+
+  onClean() {
+    this.text = '';
+    this.value = 0;
   }
 }
